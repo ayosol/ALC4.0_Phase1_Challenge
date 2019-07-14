@@ -2,8 +2,8 @@ package com.example.alc4_challenge;
 
 import android.content.Intent;
 import android.net.http.SslError;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.SslErrorHandler;
@@ -34,11 +34,14 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
 
+        //Adding the webview from the XML
         WebView myWebView = findViewById(R.id.webview);
-        myWebView.loadUrl("https://andela.com/alc");
+        myWebView.loadUrl("https://andela.com/alc"); //Load the URL
 
+        //Enabling Javascript to run in the webView
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        //Handle the SSL Error.
         myWebView.setWebViewClient(new WebViewClient(){
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error){
